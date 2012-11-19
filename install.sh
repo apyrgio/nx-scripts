@@ -12,9 +12,12 @@ if [[ -n $UBUNTU_DISTRO ]]; then
 elif [[ -n $FEDORA_DISTRO ]]; then
 	su
 else
+	echo "${txtred}Distro not supported.${txtrst}"
+	exit 1
+fi
 
 cd /usr
-wget --content-disposition https://pithos.okeanos.grnet.gr/public/vz6zt 	#Download nxclient
+wget --content-disposition https://pithos.okeanos.grnet.gr/public/vz6zt #Download nxclient
 wget --content-disposition https://pithos.okeanos.grnet.gr/public/g6k63	#Download nxnode
 wget --content-disposition https://pithos.okeanos.grnet.gr/public/2m8ns	#Download nxserver
 
